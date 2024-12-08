@@ -30,3 +30,11 @@ For example:
 
 
 // Solution
+
+Array.prototype.pops = function () {
+  return this.splice(Object.keys(this).pop())[0];
+}
+
+Array.prototype.shifts = function () {
+  return this.splice(0, +Object.keys(this).concat(1/0)[0] + 1).pop();
+}
