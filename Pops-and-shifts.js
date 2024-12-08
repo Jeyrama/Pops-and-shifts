@@ -40,3 +40,23 @@ Array.prototype.shifts = function () {
 }
 
 // or
+
+Array.prototype.pops = function() {
+  if (this.length === 0) {
+    return
+  }
+  while (this.length && !(this.length - 1 in this)) {
+    this.pop()
+  }
+  return this.pop()
+}
+
+Array.prototype.shifts = function() {
+  if (this.length === 0) {
+    return
+  }
+  while (this.length && !(0 in this)) {
+    this.shift()
+  }
+  return this.shift()
+}
